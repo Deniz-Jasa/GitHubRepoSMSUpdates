@@ -1,3 +1,4 @@
+import sys
 import requests
 import hashlib
 import text_script as alert
@@ -10,6 +11,11 @@ github_api_url = 'https://api.github.com/repos/SimplifyJobs/Summer2024-Internshi
 # URL of the GitHub README page
 readme_url = 'https://github.com/SimplifyJobs/Summer2024-Internships#readme'
 
+phone_number_1 = sys.argv[1] # Passed as github secrets
+phone_number_2 = sys.argv[2]
+
+account_sid = sys.argv[3]
+auth_token = sys.argv[4]
 
 # Function to retrieve and hash the README content
 def get_readme_content():
@@ -79,8 +85,9 @@ if current_readme_hash and current_readme_hash != previous_readme_hash:
     company_names = scrape_company_names()
 
     sms_content = "New update from 'Summer2024-Internships'. Keywords:\n" + "\n".join(company_names[:5]) + "\nApply here nerd: https://github.com/SimplifyJobs/Summer2024-Internships"
-    alert.send_sms_notification("+14379886140", sms_content)
-    alert.send_sms_notification("+18733549180", sms_content)
+    alert.send_sms_notification(phone_number_1,sms_content, account_sid, auth_token)
+    alert.send_sms_notification(phone_number_2,sms_content, account_sid, auth_token)
 
 else:
     print("No Changes")
+    alert.send_sms_notification(phone_number_1, "No Changes", account_sid, auth_token)

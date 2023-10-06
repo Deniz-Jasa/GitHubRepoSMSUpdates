@@ -20,4 +20,4 @@ jobs:
       with:
         python-version: '3.x'
     - name: Run Script
-      run: python fetch_script.py ${{ secrets.PHONE_NUMBER_1 }} ${{ secrets.PHONE_NUMBER_2 }}
+      run: python fetch_script.py ${{ secrets.PHONE_NUMBER_1 }} ${{ secrets.PHONE_NUMBER_2 }} ${{ secrets.ACCOUNT_SID }} ${{ secrets.AUTH_TOKEN }}

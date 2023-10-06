@@ -80,7 +80,7 @@ current_readme_hash = get_readme_content()
 if current_readme_hash and current_readme_hash != previous_readme_hash:
     write_previous_readme_hash(current_readme_hash)
 
-    print("Success")
+    print("Success " + current_readme_hash)
     # Scrape the company names, skipping ↳ symbols
     company_names = scrape_company_names()
 

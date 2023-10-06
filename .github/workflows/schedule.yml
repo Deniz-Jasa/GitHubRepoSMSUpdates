@@ -2,7 +2,7 @@ name: Run Workflow Every 5 Minutes
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # Schedule to run every 5 minutes
+    - cron: '0 */3 * * *'  # Schedule to run every 3 hours
 
 jobs:
   build:

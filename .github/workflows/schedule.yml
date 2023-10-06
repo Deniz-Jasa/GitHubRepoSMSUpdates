@@ -23,5 +23,6 @@ jobs:
       run: |
         pip install requests
         pip install beautifulsoup4
+        pip install twilio
     - name: Run Script
       run: python fetch_changes.py ${{ secrets.PHONE_NUMBER_1 }} ${{ secrets.PHONE_NUMBER_2 }} ${{ secrets.ACCOUNT_SID }} ${{ secrets.AUTH_TOKEN }}

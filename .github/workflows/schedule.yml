@@ -32,4 +32,4 @@ jobs:
         git config --global user.name "Deniz-Jasa"
         git add previous_readme_hash.txt
         git commit -m "Update hash file via GitHub Actions"
-        git push https://$GH_TOKEN@github.com/Deniz-Jasa/GitHubRepoSMSUpdates.git
+        git push https://${{ secrets.GH_TOKEN }}@github.com/Deniz-Jasa/GitHubRepoSMSUpdates.git

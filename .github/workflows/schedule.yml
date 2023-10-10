@@ -1,8 +1,7 @@
 name: Run Workflow Every 5 Minutes
 
 on:
-  schedule:
-    - cron: '*/5 * * * *'  # Schedule to run every 5 minutes
+  workflow_dispatch:  # Allow manual triggering
 
 jobs:
   build:

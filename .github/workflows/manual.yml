@@ -29,13 +29,8 @@ jobs:
           
           git config --global user.email "denizj2828@gmail.com"
           git config --global user.name "Deniz-Jasa"
-          
-          # Check if there are any changes to commit
-          if [[ -n $(git status -s) ]]; then
-            git add previous_readme_hash.txt
-            git commit -m "Update hash file via GitHub Actions"
-            echo "Git URL: https://${{ secrets.GH_TOKEN }}@github.com/Deniz-Jasa/GitHubRepoSMSUpdates.git"
-            git push https://${{ secrets.GH_TOKEN }}@github.com/Deniz-Jasa/GitHubRepoSMSUpdates.git
-          else
-            echo "No changes to commit."
-          fi
+
+          git add .
+          git commit -m "Update hash file via GitHub Actions"
+          echo "Git URL: https://${{ secrets.GH_TOKEN }}@github.com/Deniz-Jasa/GitHubRepoSMSUpdates.git"
+          git push https://${{ secrets.GH_TOKEN }}@github.com/Deniz-Jasa/GitHubRepoSMSUpdates.git

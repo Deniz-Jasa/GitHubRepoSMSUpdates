@@ -2,7 +2,7 @@ name: Run Workflow Every 5 Minutes
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # Schedule to run every 3 hours
+    - cron: '*/5 * * * *'  # Schedule to run every 5 minutes
 
 jobs:
   build:
@@ -33,3 +33,8 @@ jobs:
         git add previous_readme_hash.txt
         git commit -m "Update hash file via GitHub Actions"
         git push https://${{ secrets.GH_TOKEN }}@github.com/Deniz-Jasa/GitHubRepoSMSUpdates.git
+
+    - name: Debug Info
+      run: |
+        echo "GitHub Token: ${{ secrets.GH_TOKEN }}"
+        echo "Git URL: https://${{ secrets.GH_TOKEN }}@github.com/Deniz-Jasa/GitHubRepoSMSUpdates.git"

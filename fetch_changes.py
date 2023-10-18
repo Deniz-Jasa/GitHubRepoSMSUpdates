@@ -90,4 +90,3 @@ if current_readme_hash and current_readme_hash != previous_readme_hash:
 
 else:
     print("No Changes")
-    alert.send_sms_notification(phone_number_1, "No Changes", account_sid, auth_token)

@@ -11,7 +11,7 @@ def send_sms_notification(recipient_phone_number, message_body, a_s, a_t):
     client = Client(account_sid, auth_token)
 
     # Your Twilio phone number (must be purchased from Twilio)
-    twilio_phone_number = '+12568277665'
+    twilio_phone_number = '+17653774107'
 
     try:
         # Send a text message
